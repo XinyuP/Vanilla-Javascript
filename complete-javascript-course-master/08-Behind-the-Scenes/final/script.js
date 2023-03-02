@@ -3,7 +3,7 @@
 ///////////////////////////////////////
 // Scoping in Practice
 
-/*
+
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
 
@@ -229,5 +229,5 @@ jessicaCopy.family.push('John');
 
 console.log('Before marriage:', jessica2);
 console.log('After marriage: ', jessicaCopy);
-*/
+
 

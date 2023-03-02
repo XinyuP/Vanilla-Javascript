@@ -1,0 +1,15 @@
+Debouncing is a programming pattern or a technique to restrict the calling of a time-consuming function frequently, by delaying the execution of the function until a specified time to avoid unnecessary CPU cycles, and API calls and improve performance.
+
+In programming, debouncing is when a function filters user input before triggering the action. Improperly debounced user input can cause bad performance, double activations or user frustration. Often, a general debouncing function is used instead of writing new code for each input activity.
+<script>
+// 强制一个函数在某个连续时间段内只执行一次，哪怕它本来会被调用多次
+// 在处理诸如 resize、scroll、mousemove 和 keydown/keyup/keypress 
+// 等事件的时候，通常我们不希望这些事件太过频繁地触发
+const debounce = (fn, wait) => {
+  let timeout;
+  return function (...args) {
+      // 每次这个返回的函数被调用，就清除定时器，以保证不执行 fn
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn.apply(this, args) , wait)
+  }
+}
